@@ -26,7 +26,8 @@ struct GeminiDocumentView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(8)
+        .padding(.top, 8)
+        .padding(.leading, 8)
         .background(Color.black)
     }
 }

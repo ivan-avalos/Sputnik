@@ -19,7 +19,6 @@ struct ContentView: View {
                 } ) {
                     Text("←")
                 }
-                .padding(.leading, 6)
                 Button( action: {
                     self.document.forward()
                 } ) {
@@ -27,6 +26,8 @@ struct ContentView: View {
                 }
                 TextField("Gemini Site", text: $document.navBarUrl, onCommit: browse)
             }
+            .padding(.horizontal, 6)
+            .padding(.top, 6)
             
             GeminiDocumentView(document: document)
         }
@@ -36,5 +37,11 @@ struct ContentView: View {
         if let url = URL(string: document.navBarUrl) {
             document.navigate(url.standardized, nil)
         }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
